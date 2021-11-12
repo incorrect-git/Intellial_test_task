@@ -7,13 +7,16 @@ class ControllCookie {
     get({ key, value } = {}){
         let list = new Map();
         let listCookie = document.cookie.split(';');
+        let result = false;   
+        if (listCookie.length > 0){
+            for (let index in listCookie){
+                let ls = listCookie[index].split('=');
+                list.set(ls[0].trim(), ls[1].trim());
+            }
         
-        for (let index in listCookie){
-            let ls = listCookie[index].split('=');
-            list.set(ls[0].trim(), ls[1].trim());
+            result = list.get(key);
         }
-
-        return list.get(key);
+        return result;
     }
 
     set({ key, value, arrCookie }){
