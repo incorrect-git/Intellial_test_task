@@ -8,9 +8,9 @@ class Preloader {
 
     init({  }) {
         const listScripts = [
-            "js/language.js",
-            "js/printerText.js",
-            "js/index.js"
+            "./js/language.js",
+            "./js/printerText.js",
+            "./js/index.js"
         ]
         this.numbLoad = listScripts.length;
         new LoaderScripts()
