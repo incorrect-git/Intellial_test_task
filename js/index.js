@@ -8,7 +8,7 @@ class ControllCookie {
         let list = new Map();
         let listCookie = document.cookie.split(';');
         let result = false;   
-        if (listCookie.length > 0){
+        if (document.cookie != ""){
             for (let index in listCookie){
                 let ls = listCookie[index].split('=');
                 list.set(ls[0].trim(), ls[1].trim());
